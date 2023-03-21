@@ -51,7 +51,6 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
             RuleFor(item => item)
                 .GreaterThan(0)
                 .WithMessage("Product Group Id must be greater than 0.");
-
         }
     }
 }
