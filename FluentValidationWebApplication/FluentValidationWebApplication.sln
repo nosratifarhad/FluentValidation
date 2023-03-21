@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidation", "FluentValidation.csproj", "{44FC37D1-983B-4B82-AB50-63748DDFAE9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidationWebApplication", "FluentValidationWebApplication\FluentValidationWebApplication.csproj", "{30971BC6-A3EC-40E0-A442-AC2E078F6F3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{44FC37D1-983B-4B82-AB50-63748DDFAE9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44FC37D1-983B-4B82-AB50-63748DDFAE9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44FC37D1-983B-4B82-AB50-63748DDFAE9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44FC37D1-983B-4B82-AB50-63748DDFAE9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30971BC6-A3EC-40E0-A442-AC2E078F6F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30971BC6-A3EC-40E0-A442-AC2E078F6F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30971BC6-A3EC-40E0-A442-AC2E078F6F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30971BC6-A3EC-40E0-A442-AC2E078F6F3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4AC5181F-E7A9-4830-84B3-9B7089A41FCB}
+		SolutionGuid = {38C16898-3279-4D2A-9DAB-086E8F0C928E}
 	EndGlobalSection
 EndGlobal
