@@ -1,14 +1,14 @@
 ﻿using FluentValidation;
-using FluentValidationWebApplication.Application.Commands.ProductCommands.CreateProduct;
+using FluentValidationWebApplication.Application.Commands.ValidatorCommands.Id;
 
 namespace FluentValidationWebApplication.Application.Commands.ValidatorCommands.IntId
 {
-    public class IntIdCommandValidator : AbstractValidator<CreateProductCommand>
+    public class IdCommandValidator : AbstractValidator<IdCommand>
     {
-        public IntIdCommandValidator()
+        public IdCommandValidator()
         {
             RuleFor(x => x.Id)
-            .GreaterThan("0")
+            .GreaterThan(0)
             .WithMessage("{PropertyName} must be greater than 0.");
         }
     }
