@@ -23,8 +23,8 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
             RuleFor(p => p.ProductGroups)
                 .NotEmpty().WithMessage("{PropertyName} must not be empty.");
 
-            RuleForEach(group => group.ProductGroups)
-                .SetValidator(new ProductGroupValidator());
+            //RuleForEach(group => group.ProductGroups)
+            //    .SetValidator(new ProductGroupValidator());
 
             //RuleFor(p => p.ProductGroups)
             //    .Must(FluentValidatorHelper.ValidateIdIsUnique).WithMessage("{PropertyName} must not be duplicate.");
@@ -44,13 +44,5 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
 
         }
     }
-    public class ProductGroupValidator : AbstractValidator<int>
-    {
-        public ProductGroupValidator()
-        {
-            RuleFor(item => item)
-                .GreaterThan(0)
-                .WithMessage("Product Group Id must be greater than 0.");
-        }
-    }
+
 }

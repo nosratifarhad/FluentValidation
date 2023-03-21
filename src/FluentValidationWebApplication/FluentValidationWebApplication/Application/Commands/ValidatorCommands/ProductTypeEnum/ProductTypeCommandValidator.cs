@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
+using FluentValidationWebApplication.Application.Commands.ValidatorCommands.ProductTypeEnum;
 
 namespace FluentValidationWebApplication.Application.Commands.ValidatorCommands.EnumProductType
 {
-    public class EnumProductTypeCommandValidator: AbstractValidator<EnumProductTypeCommand>
+    public class ProductTypeCommandValidator: AbstractValidator<ProductTypeCommand>
     {
-        public EnumProductTypeCommandValidator()
+        public ProductTypeCommandValidator()
         {
             RuleFor(x => x.ProductType)
             .IsInEnum()
