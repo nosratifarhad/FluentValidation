@@ -10,6 +10,10 @@ namespace FluentValidationWebApplication.Application.Commands.ValidatorCommands.
             RuleFor(x => x.Id)
             .GreaterThan(0)
             .WithMessage("{PropertyName} must be greater than 0.");
+
+            RuleFor(x => x.Id)
+                .ExclusiveBetween(1, 10)
+                .WithMessage("{PropertyName} must be greater than 0.");
         }
     }
 }

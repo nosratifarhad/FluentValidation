@@ -27,10 +27,11 @@ namespace FluentValidationWebApplication.Application.Commands.ValidatorCommands.
         public PictureValidator()
         {
             RuleFor(x => x.ProductPictureId)
-             .GreaterThan(0)
+             .GreaterThanOrEqualTo(1)
              .WithMessage("{PropertyName} must greater than 0");
 
             RuleFor(x => x.Path)
+                .Length(20, 250).WithMessage("Please specify a first name")
                 .NotEmpty().WithMessage("{PropertyName} must be empty.")
                 .NotNull().WithMessage("{PropertyName} must be null.");
         }
