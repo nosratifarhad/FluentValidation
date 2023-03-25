@@ -50,7 +50,7 @@ RuleFor(x => x.ProductTitle)
     .MinimumLength(20)
     .WithMessage("{PropertyName} must be greater than 20 chars.");
 
-RuleFor(x => x.ProductTitle)
-    .Length(20, 250).WithMessage("must be between 1 and 250 chars.");
+//RuleFor(x => x.ProductTitle)
+//    .Length(20, 250).WithMessage("must be between 1 and 250 chars.");
 
 ```
