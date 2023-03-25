@@ -104,3 +104,7 @@ public class ProductGroupValidator : AbstractValidator<int>
     }
 }
 ```
+
+
+## "List Entity" Validator ?
+### Please pay attention to the text of the errors .
