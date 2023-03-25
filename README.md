@@ -61,5 +61,30 @@ RuleFor(x => x.ProductTitle)
 RuleFor(x=>x.ProductType)
     .IsInEnum()
     .WithMessage("{PropertyName} must be enum.");
+```
 
+## "enum" Validator ?
+### Please pay attention to the text of the errors .****
+```csharp
+RuleFor(p => p.ProductGroups)
+    .NotEmpty().WithMessage("{PropertyName} is required.");
+
+RuleFor(p => p.ProductGroups)
+    .Must(x => x.Count <= 3)
+    .WithMessage("no more than 3 group are allowed.");
+
+RuleForEach(p => p.ProductGroups)
+    .SetValidator(new ProductGroupValidator());
+
+//RuleFor(p => p.ProductGroups)
+//      .ForEach(productGroup =>
+//      {
+//          productGroup 
+//            .GreaterThan(0)
+//            .WithMessage("{PropertyName} must greater than {PropertyValue}.");
+//      });
+
+RuleFor(p => p.ProductGroups)
+    .NotEqual(group => group.ProductGroups)
+    .WithMessage("{PropertyName} must not be duplicate.");
 ```
