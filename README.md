@@ -73,7 +73,7 @@ RuleFor(p => p.ProductGroups)
     .Must(x => x.Count <= 3)
     .WithMessage("no more than 3 group are allowed.");
 
-// validator list items use "ForEach" OR
+// validate items list use "ForEach" OR
 //RuleFor(p => p.ProductGroups)
 //      .ForEach(productGroup =>
 //      {
@@ -82,7 +82,7 @@ RuleFor(p => p.ProductGroups)
 //            .WithMessage("{PropertyName} must greater than {PropertyValue}.");
 //      });
 
-//OR you can use custom validators for Lists like this
+//OR you can use custom validate for Lists like this =>
 RuleForEach(p => p.ProductGroups)
     .SetValidator(new ProductGroupValidator());
 
@@ -93,6 +93,7 @@ RuleFor(p => p.ProductGroups)
 ## you can custom validators for Lists like 
 
 ```csharp
+// this custom validate For "ProductGroups"
 public class ProductGroupValidator : AbstractValidator<int>
 {
     public ProductGroupValidator()
