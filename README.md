@@ -55,7 +55,7 @@ RuleFor(x => x.ProductTitle)
 
 ```
 ## "enum" Validator ?
-### Please pay attention to the text of the errors .****
+### Please pay attention to the text of the errors .
 
 ```csharp
 RuleFor(x=>x.ProductType)
@@ -64,7 +64,7 @@ RuleFor(x=>x.ProductType)
 ```
 
 ## "enum" Validator ?
-### Please pay attention to the text of the errors .****
+### Please pay attention to the text of the errors .
 ```csharp
 RuleFor(p => p.ProductGroups)
     .NotEmpty().WithMessage("{PropertyName} is required.");
@@ -73,9 +73,7 @@ RuleFor(p => p.ProductGroups)
     .Must(x => x.Count <= 3)
     .WithMessage("no more than 3 group are allowed.");
 
-RuleForEach(p => p.ProductGroups)
-    .SetValidator(new ProductGroupValidator());
-
+// validator list items use "ForEach" OR
 //RuleFor(p => p.ProductGroups)
 //      .ForEach(productGroup =>
 //      {
@@ -84,7 +82,24 @@ RuleForEach(p => p.ProductGroups)
 //            .WithMessage("{PropertyName} must greater than {PropertyValue}.");
 //      });
 
+//OR you can use custom validators for Lists like this
+RuleForEach(p => p.ProductGroups)
+    .SetValidator(new ProductGroupValidator());
+
 RuleFor(p => p.ProductGroups)
     .NotEqual(group => group.ProductGroups)
     .WithMessage("{PropertyName} must not be duplicate.");
+```
+## you can custom validators for Lists like 
+
+```csharp
+public class ProductGroupValidator : AbstractValidator<int>
+{
+    public ProductGroupValidator()
+    {
+        RuleFor(item => item)
+            .GreaterThan(0)
+            .WithMessage("{PropertyName} must greater than {PropertyValue}.");
+    }
+}
 ```
