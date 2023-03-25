@@ -28,8 +28,8 @@ RuleFor(x => x.Id)
 ```
 ## "string" Validator ?
 ### Please pay attention to the text of the errors .
-```csharp
 
+```csharp
 RuleFor(x => x.ProductTitle)
     .NotEmpty()
     .WithMessage("{PropertyName} is required.");
@@ -52,5 +52,14 @@ RuleFor(x => x.ProductTitle)
 
 //RuleFor(x => x.ProductTitle)
 //    .Length(20, 250).WithMessage("must be between 1 and 250 chars.");
+
+```
+## "enum" Validator ?
+### Please pay attention to the text of the errors .****
+
+```csharp
+RuleFor(x=>x.ProductType)
+    .IsInEnum()
+    .WithMessage("{PropertyName} must be enum.");
 
 ```
