@@ -90,7 +90,7 @@ RuleFor(p => p.ProductGroups)
     .NotEqual(group => group.ProductGroups)
     .WithMessage("{PropertyName} must not be duplicate.");
 ```
-## you can custom validators for Lists like 
+## you can use custom validate For "ProductGroups" 
 
 ```csharp
 // this custom validate For "ProductGroups"
