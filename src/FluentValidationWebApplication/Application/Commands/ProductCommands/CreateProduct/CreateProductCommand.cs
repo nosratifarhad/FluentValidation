@@ -5,7 +5,7 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
 {
     public class CreateProductCommand : ICommand
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string ProductTitle { get; set; }
 
