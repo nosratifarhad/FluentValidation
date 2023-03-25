@@ -104,7 +104,57 @@ public class ProductGroupValidator : AbstractValidator<int>
     }
 }
 ```
-
-
 ## "List Entity" Validator ?
 ### Please pay attention to the text of the errors .
+```csharp
+RuleFor(p => p.ProductPictures)
+    .NotEmpty().WithMessage("{PropertyName} is required.")
+    .NotNull().WithMessage("{PropertyName} is required.");
+
+RuleFor(p => p.ProductPictures)
+  .Must(p => p.Count <= 3)
+  .WithMessage("No more than 10 orders are allowed.");
+
+//validate items list use "ForEach" OR
+//RuleFor(p => p.ProductPictures)
+//  .ForEach(pictureRule =>
+//  {
+//      pictureRule
+//      .Must(picture => picture.ProductPictureId > 0)
+//      .WithMessage("{PropertyName} must greater than {PropertyValue}.");
+
+//      //...
+//  });
+
+//OR you can use custom validate for Lists like this =>
+RuleForEach(rule => rule.ProductPictures)
+.SetValidator(new PictureValidator());
+
+```
+
+## you can use custom validate For "ProductPicture" 
+
+```csharp
+public class PictureValidator : AbstractValidator<ProductPicture>
+{
+    public PictureValidator()
+    {
+        RuleFor(x => x.ProductPictureId)
+         .GreaterThanOrEqualTo(1)
+         .WithMessage("{PropertyName} must greater than {PropertyValue}.");
+
+        RuleFor(x => x.Path)
+            .NotEmpty()
+            .WithMessage("{PropertyName} is required.");
+
+        RuleFor(x => x.Path)
+            .NotNull()
+            .WithMessage("{PropertyName} is required.");
+
+        RuleFor(x => x.Path)
+            .Length(20, 250).WithMessage("must be between 1 and 250 chars.")
+            .NotEmpty().WithMessage("{PropertyName} is required.")
+            .NotNull().WithMessage("{PropertyName} is required.");
+    }
+}
+```
