@@ -26,4 +26,31 @@ RuleFor(x => x.Id)
     .WithMessage("{PropertyName} must greater than 1 and less than 10.");
 
 ```
- 
+## "string" Validator ?
+### Please pay attention to the text of the errors .
+```csharp
+
+RuleFor(x => x.ProductTitle)
+    .NotEmpty()
+    .WithMessage("{PropertyName} is required.");
+
+RuleFor(x => x.ProductTitle)
+    .NotNull()
+    .WithMessage("{PropertyName} is required.");
+
+RuleFor(x => x.ProductTitle)
+    .NotEqual("Foo")
+    .WithMessage("{PropertyName} should not be equal to ‘Foo’.");
+
+RuleFor(x => x.ProductTitle)
+    .MaximumLength(250)
+    .WithMessage("{PropertyName} must be less than 20 chars.");
+
+RuleFor(x => x.ProductTitle)
+    .MinimumLength(20)
+    .WithMessage("{PropertyName} must be greater than 20 chars.");
+
+RuleFor(x => x.ProductTitle)
+    .Length(20, 250).WithMessage("must be between 1 and 250 chars.");
+
+```
