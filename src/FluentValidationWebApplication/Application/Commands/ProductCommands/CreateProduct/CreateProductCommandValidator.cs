@@ -51,8 +51,8 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
                 .MinimumLength(20)
                 .WithMessage("{PropertyName} must be greater than 20 chars.");
 
-            RuleFor(x => x.ProductTitle)
-                .Length(20, 250).WithMessage("must be between 1 and 250 chars.");
+            //RuleFor(x => x.ProductTitle)
+            //    .Length(20, 250).WithMessage("must be between 1 and 250 chars.");
 
             #endregion string
 
@@ -99,14 +99,18 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
               .Must(p => p.Count <= 3)
               .WithMessage("No more than 10 orders are allowed.");
 
-            RuleFor(p => p.ProductPictures)
-              .ForEach(pictureRule =>
-              {
-                  pictureRule
-                  .Must(picture => picture.ProductPictureId > 0)
-                  .WithMessage("Orders must have a total of more than {PropertyValue}.");
-              });
+            //validate items list use "ForEach" OR
+            //RuleFor(p => p.ProductPictures)
+            //  .ForEach(pictureRule =>
+            //  {
+            //      pictureRule
+            //      .Must(picture => picture.ProductPictureId > 0)
+            //      .WithMessage("{PropertyName} must greater than {PropertyValue}.");
 
+            //      //...
+            //  });
+
+            //OR you can use custom validate for Lists like this =>
             RuleForEach(rule => rule.ProductPictures)
             .SetValidator(new PictureValidator());
 
