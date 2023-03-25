@@ -63,7 +63,7 @@ RuleFor(x=>x.ProductType)
     .WithMessage("{PropertyName} must be enum.");
 ```
 
-## "enum" Validator ?
+## "List<int>" Validator ?
 ### Please pay attention to the text of the errors .
 ```csharp
 RuleFor(p => p.ProductGroups)
