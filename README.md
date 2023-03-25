@@ -1,6 +1,6 @@
 # FluentValidation and use Mediator .
 
-## "int" Validator ?
+## "int" Validator .
 ### Please pay attention to the text of the errors .
 
 ```csharp
@@ -26,7 +26,7 @@ RuleFor(x => x.Id)
     .WithMessage("{PropertyName} must greater than 1 and less than 10.");
 
 ```
-## "string" Validator ?
+## "string" Validator .
 ### Please pay attention to the text of the errors .
 
 ```csharp
@@ -54,7 +54,7 @@ RuleFor(x => x.ProductTitle)
 //    .Length(20, 250).WithMessage("must be between 1 and 250 chars.");
 
 ```
-## "enum" Validator ?
+## "enum" Validator .
 ### Please pay attention to the text of the errors .
 
 ```csharp
@@ -63,7 +63,7 @@ RuleFor(x=>x.ProductType)
     .WithMessage("{PropertyName} must be enum.");
 ```
 
-## "List int" Validator ?
+## "List int" Validator .
 ### Please pay attention to the text of the errors .
 ```csharp
 RuleFor(p => p.ProductGroups)
@@ -104,7 +104,7 @@ public class ProductGroupValidator : AbstractValidator<int>
     }
 }
 ```
-## "List Entity" Validator ?
+## "List Entity" Validator .
 ### Please pay attention to the text of the errors .
 ```csharp
 RuleFor(p => p.ProductPictures)
