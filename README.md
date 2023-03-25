@@ -3,7 +3,7 @@
 ## "int" Validator ?
 ### Please pay attention to the text of the errors .
 
-```cahrp
+```csharp
 
 RuleFor(x => x.Id)
     .GreaterThan(0)
