@@ -1,4 +1,5 @@
 ﻿using FluentValidationWebApplication.Service;
+using FluentValidationWebApplication.Service.Contracts;
 
 namespace FluentValidationWebApplication.IOC
 {

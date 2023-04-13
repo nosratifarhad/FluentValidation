@@ -1,6 +1,6 @@
 ﻿using Mediator;
-using FluentValidationWebApplication.Service;
 using FluentValidationWebApplication.ViewModels.ProductViewModels;
+using FluentValidationWebApplication.Service.Contracts;
 
 namespace FluentValidationWebApplication.Application.Queries.Products.GetProduct
 {

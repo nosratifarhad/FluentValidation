@@ -1,4 +1,5 @@
 ﻿using FluentValidationWebApplication.Dtos;
+using FluentValidationWebApplication.Service.Contracts;
 using FluentValidationWebApplication.ViewModels.ProductViewModels;
 
 namespace FluentValidationWebApplication.Service
