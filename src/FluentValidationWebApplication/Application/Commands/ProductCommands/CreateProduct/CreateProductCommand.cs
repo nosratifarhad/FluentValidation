@@ -15,6 +15,7 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
 
         public List<ProductPicture> ProductPictures { get; set; }
 
+        public int? ProductStockInStock { get; set; }
     }
 
     public class ProductPicture
