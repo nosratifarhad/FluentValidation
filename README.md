@@ -4,7 +4,6 @@
 ### Please pay attention to the text of the errors .
 
 ```csharp
-
 RuleFor(x => x.Id)
     .GreaterThan(0)
     .WithMessage("{PropertyName} must greater than {PropertyValue}.");
@@ -24,8 +23,19 @@ RuleFor(x => x.Id)
 RuleFor(x => x.Id)
     .ExclusiveBetween(1, 10)
     .WithMessage("{PropertyName} must greater than 1 and less than 10.");
-
 ```
+
+## "int?" Nullable Validator .
+### Please pay attention to the text of the errors .
+
+```csharp
+RuleFor(x => x.Id)
+.GreaterThanOrEqualTo(0)
+.When(a => a.ProductStockInStock is not null)
+.WithMessage("{PropertyName} must greater than {PropertyValue}.");
+```
+
+
 ## "string" Validator .
 ### Please pay attention to the text of the errors .
 
@@ -52,7 +62,6 @@ RuleFor(x => x.ProductTitle)
 
 //RuleFor(x => x.ProductTitle)
 //    .Length(20, 250).WithMessage("must be between 1 and 250 chars.");
-
 ```
 ## "enum" Validator .
 ### Please pay attention to the text of the errors .
@@ -90,8 +99,8 @@ RuleFor(p => p.ProductGroups)
     .NotEqual(group => group.ProductGroups)
     .WithMessage("{PropertyName} must not be duplicate.");
 ```
-## you can use custom validate For "ProductGroups" 
 
+## you can use custom validate For "ProductGroups" 
 ```csharp
 // this custom validate For "ProductGroups"
 public class ProductGroupValidator : AbstractValidator<int>
@@ -104,6 +113,7 @@ public class ProductGroupValidator : AbstractValidator<int>
     }
 }
 ```
+
 ## "List Entity" Validator .
 ### Please pay attention to the text of the errors .
 ```csharp
