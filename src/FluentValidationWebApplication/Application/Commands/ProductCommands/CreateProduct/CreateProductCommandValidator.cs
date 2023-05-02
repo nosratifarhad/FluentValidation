@@ -27,7 +27,7 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
             RuleFor(x => x.Id)
                 .ExclusiveBetween(1, 10)
                 .WithMessage("{PropertyName} must greater than 1 and less than 10.");
-            
+
             #endregion int
 
             #region string
@@ -57,7 +57,7 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
             #endregion string
 
             #region Enum
-            RuleFor(x=>x.ProductType)
+            RuleFor(x => x.ProductType)
                 .IsInEnum()
                 .WithMessage("{PropertyName} must be enum.");
 
@@ -115,6 +115,15 @@ namespace FluentValidationWebApplication.Application.Commands.ProductCommands.Cr
             .SetValidator(new PictureValidator());
 
             #endregion List<Entity>
+
+            #region Nullable
+
+            RuleFor(x => x.Id)
+            .GreaterThanOrEqualTo(0)
+            .When(a => a.ProductStockInStock is not null)
+            .WithMessage("{PropertyName} must greater than {PropertyValue}.");
+
+            #endregion
         }
     }
 
