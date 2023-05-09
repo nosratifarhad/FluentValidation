@@ -1,4 +1,4 @@
-﻿namespace FluentValidationWebApplication.Enums
+﻿namespace FluentValidationWebApplication.Domain.Enums
 {
     public enum ProductType
     {
