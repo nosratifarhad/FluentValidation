@@ -1,5 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
-using FluentValidationWebApplication.IOC;
+using FluentValidationWebApplication.Domain;
+using FluentValidationWebApplication.Repository;
 
 namespace FluentValidationWebApplication
 {
@@ -14,7 +15,7 @@ namespace FluentValidationWebApplication
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationService();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             #region [ Mediator ]
 

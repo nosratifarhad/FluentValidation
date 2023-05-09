@@ -1,4 +1,4 @@
-﻿using FluentValidationWebApplication.Enums;
+﻿using FluentValidationWebApplication.Domain.Enums;
 using Mediator;
 
 namespace FluentValidationWebApplication.Application.Commands.ProductCommands.CreateProduct
