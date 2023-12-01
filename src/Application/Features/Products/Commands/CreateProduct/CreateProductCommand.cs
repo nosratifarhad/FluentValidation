@@ -1,7 +1,7 @@
 ﻿using FluentValidationWebApplication.Domain.Enums;
 using Mediator;
 
-namespace FluentValidationWebApplication.Application.Commands.ProductCommands.CreateProduct
+namespace FluentValidationWebApplication.Application.Features.Products.Commands.ProductCommands.CreateProduct
 {
     public class CreateProductCommand : ICommand
     {

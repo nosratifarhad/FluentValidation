@@ -1,4 +1,4 @@
-﻿using FluentValidationWebApplication.Application.Commands.ProductCommands.CreateProduct;
+﻿using FluentValidationWebApplication.Application.Features.Products.Commands.ProductCommands.CreateProduct;
 using FluentValidationWebApplication.Application.Queries.Products.GetProduct;
 using Mediator;
 using Microsoft.AspNetCore.Http;
